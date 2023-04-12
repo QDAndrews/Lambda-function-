@@ -5,7 +5,7 @@ Serverless Foundation
 
 Modify the lab's AWS Lamda function code to display differnt feeling values based on the emoji_type value in the JSON element. 
 
-![image](https://user-images.githubusercontent.com/55962550/231540514-ecd28748-7be3-44ab-9125-5524715bde6d.png)
+![image](https://user-images.githubusercontent.com/55962550/231575864-1d80aedc-ad4d-49ff-8e79-a349964bce32.png)
 
 
 Validation Process 
