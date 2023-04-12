@@ -1,0 +1,60 @@
+import json 
+
+def lambda_handler(event, context):
+    
+ 
+        
+    # In a name-value pair you can extract the "value" of the pair using the "name" of the pair.   
+    # Here the id value is extracted from the event Lambda parameter and passed to a variable called emoji_type.
+    emoji_type = event["emoji_type"]
+    message = event['message']
+    
+    # Here the message value is extracted from the event Lambda parameter and passed to a variable called message.
+    ### print(feeling)
+   # print(message)
+    
+    
+    # In Python, you can create a variable with no value using the Built-in constant None. This means the variable "custom_message" currently has no value.
+    #custom_message = None
+    
+    
+    
+    # In Python, we use the if-elif-else to create a conditional execution. https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
+    # That is, if the value of emoji_type is equal to 0, we execute the statement inside its block
+    if emoji_type == 0:
+        # Only execute if id is equal to 1
+        # The variable custom_message combines "Message for code 0:" string with the variable message
+        feeling = "positive"
+       # custom_message = "I love the park"
+
+    elif emoji_type == 1:
+        # The variable custom_message combines "Message for code 1:" string with the variable message
+        feeling = "neutral"
+        #custom_message = "Message for code 1: " + message
+
+    else:
+        # The variable custom_message combines "Message for all other codes:" string with the variable message
+        feeling = "negative"
+       # custom_message = "Message for all other codes: " + message
+        
+        
+        
+        
+    # Optionally, the handler can return a value. What happens to the returned value depends on the invocation type you use when invoking the Lambda function
+    # In this lab we use synchronous execution, so we need to create a response for the lambda function.
+    # We created a "response" variable that has a structure of name-value pairs using the id and custom_message created earlier.
+    response = {
+        # In this name-value pair, the literal value "message" will store the value of the variable custom_message.
+        "feeling": feeling,
+        # In this name-value pair, the literal value "id" will store the value of the variable id.
+      #  "custom_message": custom_message,
+        'message': message
+    }
+    
+    
+    
+    
+    
+    # Finally, we return the values from response variable to the caller, which could be a test event or an AWS service performing a synchronous call.
+    # The execution of the lambda function is finished.
+    return response
